@@ -106,23 +106,13 @@ public class CalculatorBrain extends PostfixCalculator {
         if( expression.size()!=0 )
         {
             if (isOperator(expression.get(expression.size() - 1)))
-            {/*
-                if(expression.get(expression.size()-1).equals("-") )
-                {
-                    if(expression.get(expression.size()-2).equals(")") || isNumeric(expression.get(expression.size()-2)) )
-                    {
-                        expression.add(operator);
-                        mEquation = TextUtils.join("", expression);
-                    }
-                }
-                else*/
-                {
-                    expression.set(expression.size()-1, operator);
-                    mEquation = TextUtils.join("", expression);
-                }
+            {
+                expression.set(expression.size()-1, operator);
+                mEquation = TextUtils.join("", expression);
+
             } else if (isNumeric(expression.get(expression.size() - 1)) || expression.get(expression.size() - 1).equals(")")) {
-                expression.add(operator);                               //Adds current operator
-                mEquation = TextUtils.join("", expression);             //Turns current collection of the expression into string
+                expression.add(operator);                                                   //Adds current operator
+                mEquation = TextUtils.join("", expression);                                 //Turns current collection of the expression into string
             }
         }
 
@@ -132,7 +122,7 @@ public class CalculatorBrain extends PostfixCalculator {
     //Parenthesis buttons pressed.
     public String parenthesisPressed(String parenthesis)
     {
-        String joined = TextUtils.join("", operand);        //Makes arrayList operand into string number
+        String joined = TextUtils.join("", operand);                                        //Makes arrayList operand into string number
         expression.add(joined);
         operand.clear();
 
