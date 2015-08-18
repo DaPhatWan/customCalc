@@ -51,7 +51,6 @@ public class CalculatorBrain extends PostfixCalculator {
 
     //Number was pressed.
     //"." counts as a number - checks if decimal is already used or not
-    //
     public String numberPressed(String number)
     {
         if (number.equals(TOGGLESIGN))
